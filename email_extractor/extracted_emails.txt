@@ -1,0 +1,10 @@
+accounts@startup.io
+admin@automation.local
+contact@domain.com
+finance@startup.io
+help@me.edu
+john.doe@example.com
+old.user@retired.com
+smith.jane@techcorp.org
+support@service-provider.net
+user123@gmail.com

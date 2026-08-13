@@ -1,0 +1,18 @@
+Hello Team,
+
+Please find the contact details for our project partners:
+- John Doe: john.doe@example.com
+- Jane Smith: smith.jane@techcorp.org
+- Support: support@service-provider.net
+
+Note: Do not send emails to old.user@retired.com as they are no longer with the company.
+For billing, reach out to finance@startup.io or accounts@startup.io.
+
+Random text to test the regex:
+user123@gmail.com is a common format.
+Sometimes emails are inside brackets (contact@domain.com).
+Or even at the end of a sentence like help@me.edu.
+
+Best regards,
+Automation Bot
+admin@automation.local
