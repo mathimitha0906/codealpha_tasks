@@ -3,84 +3,89 @@ This module handles the visual representation of the Hangman game.
 """
 
 HANGMAN_STAGES = [
-    # Final state: head, torso, both arms, and both legs
+    # 0 mistakes: base scaffolding only
     """
        --------
+
        |      |
-       |      O
-       |     /|\\
-       |     / \\
-       |
-    """,
-    # 5 mistakes: head, torso, both arms, and one leg
-    """
-       --------
-       |      |
-       |      O
-       |     /|\\
-       |     /
-       |
-    """,
-    # 4 mistakes: head, torso, and both arms
-    """
-       --------
-       |      |
-       |      O
-       |     /|\\
-       |
-       |
-    """,
-    # 3 mistakes: head, torso, and one arm
-    """
-       --------
-       |      |
-       |      O
-       |     /|
-       |
-       |
-    """,
-    # 2 mistakes: head and torso
-    """
-       --------
-       |      |
-       |      O
-       |      |
-       |
+       |      
+       |     
+       |     
        |
     """,
     # 1 mistake: head
     """
        --------
+
        |      |
        |      O
-       |
-       |
+       |     
+       |     
        |
     """,
-    # Initial state: empty gallows
+    # 2 mistakes: head and torso
     """
        --------
+
        |      |
+       |      O
+
+       |      |
+       |     
        |
+    """,
+    # 3 mistakes: head, torso, and one arm
+    """
+       --------
+
+       |      |
+       |      O
+
+       |     /|
+       |     
        |
+    """,
+    # 4 mistakes: head, torso, and both arms
+    """
+       --------
+
+       |      |
+       |      O
+
+       |     /|\\
+       |     
        |
+    """,
+    # 5 mistakes: head, torso, both arms, and one leg
+    """
+       --------
+
+       |      |
+       |      O
+
+       |     /|\\
+       |     /
+       |
+    """,
+    # 6 mistakes: final state (dead man)
+    """
+       --------
+
+       |      |
+       |      O
+
+       |     /|\\
+       |     / \\
        |
     """
 ]
 
-def get_hangman_stage(remaining_attempts):
-    """
-    Returns the visual stage based on remaining attempts.
-    """
-    return HANGMAN_STAGES[remaining_attempts]
-
 def display_game_status(word_completion, remaining_attempts, guessed_letters, category):
-    """
-    Prints the current status of the game including the category hint.
-    """
-    print(get_hangman_stage(remaining_attempts))
-    print(f"Hint (Category): {category}")
-    print(f"Word: {' '.join(word_completion)}")
-    print(f"Remaining attempts: {remaining_attempts}")
-    print(f"Guessed letters: {', '.join(sorted(guessed_letters))}")
+    # Calculate index based on mistakes made
+    mistakes = 6 - remaining_attempts
+    print(HANGMAN_STAGES[mistakes])
+    print(f"Category: {category}")
+    print("Word: " + " ".join(word_completion))
+    print(f"Guessed letters: {', '.join(sorted(guessed_letters)) if guessed_letters else 'None'}")
+    print(f"Attempts left: {remaining_attempts}")
     print("-" * 30)

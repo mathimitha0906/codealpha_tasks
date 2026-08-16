@@ -1,6 +1,3 @@
-"""
-This module contains the core game logic for Hangman with hint support.
-"""
 import random
 from .words import WORD_DATA
 from .display import display_game_status
@@ -27,7 +24,8 @@ class HangmanGame:
                 self.category
             )
             
-            guess = input("Please guess a letter: ").upper()
+            # Added .strip() to clean up accidental leading/trailing spaces
+            guess = input("Please guess a letter: ").strip().upper()
             
             if self._validate_input(guess):
                 self._process_guess(guess)
