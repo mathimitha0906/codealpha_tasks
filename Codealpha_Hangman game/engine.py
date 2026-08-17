@@ -1,6 +1,6 @@
 import random
-from .words import WORD_DATA
-from .display import display_game_status
+from words import WORD_DATA
+from display import display_game_status
 
 class HangmanGame:
     def __init__(self, max_attempts=6):

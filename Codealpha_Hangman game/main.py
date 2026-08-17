@@ -1,7 +1,7 @@
 """
 Main entry point for the Hangman Game.
 """
-from hangman.engine import HangmanGame
+from engine import HangmanGame
 
 def main():
     try:
